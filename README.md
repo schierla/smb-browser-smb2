@@ -55,8 +55,8 @@ smb2Client.readdir('Windows\\System32', function(err, files){
 
 ### smb2Client.readFile ( filename, cbSize, cbData, callback )
 - ```filename``` String
-- ```options``` Object
-    - ```encoding``` String | Null default = null
+- ```cbSize``` Function
+- ```cbData``` Function
 - ```callback``` Function
 
 Asynchronously reads the entire contents of a file. Example:
@@ -77,11 +77,11 @@ smb2Client.readFile('path\\to\\my\\file.txt',
 );
 ```
 
-The first callback cbSize is passed one argument (size) that gives the size of the file, and may return a range {start: , end: } if only a part of the file is requested.
+The first callback ```cbSize``` is passed one argument (size) that gives the size of the file, and may return a range ```{start: 0, end: 1023}``` if only a part of the file is requested.
 
-The second callback cbData is called for each loaded data chunk of up to 64 KB.
+The second callback ```cbData``` is called for each loaded data chunk of up to 64 KB.
 
-The third callback is passed one arguments (err) that gives the occured error, or is null if the request completed successfully.
+The third callback ```callback``` is passed one arguments (err) that gives the occured error, or is null if the request completed successfully.
 
 
 ### smb2Client.close ( )
