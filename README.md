@@ -43,15 +43,18 @@ var smb2Client = new SMB2({
 ```
 
 ### smb2Client.readdir ( path, callback )
-Asynchronous readdir(3). Reads the contents of a directory. The callback gets two arguments (err, files) where files is an array objects describing contained files and directories.
+- ```path``` String
+- ```callback``` Function 
 
-Example:
+Asynchronous readdir(3). Reads the contents of a directory. Example:
 ```javascript
 smb2Client.readdir('Windows\\System32', function(err, files){
     if(err) throw err;
     console.log(files);
 });
 ```
+
+The callback gets two arguments (err, files) where files is an array objects describing contained files and directories.
 
 ### smb2Client.readFile ( filename, cbSize, cbData, callback )
 - ```filename``` String
@@ -63,14 +66,14 @@ Asynchronously reads the entire contents of a file. Example:
 ```javascript
 smb2Client.readFile('path\\to\\my\\file.txt', 
   function(size) {
-	  console.log("The file has " + size + " bytes.");
-		// optionally return a requested range, {start: 0, end: 100}
+    console.log("The file has " + size + " bytes.");
+    // optionally return a requested range, {start: 0, end: 100}
   }, 
-	function(data) {
-	  // will be called for each chunk of 64k
-	  console.log(data);
-	},
-	function(err){
+  function(data) {
+    // will be called for each chunk of 64k
+    console.log(data);
+  },
+  function(err){
     if(err) throw err;
     else console.log("End of file reached.");
   }
