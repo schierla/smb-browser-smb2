@@ -1,20 +1,20 @@
 {
-  "name": "smb2",
+  "name": "smb-browser-smb2",
   "description": "SMB2 Client",
-  "homepage": "https://github.com/bchelli/node-smb2",
+  "homepage": "https://github.com/schierla/smb-browser-smb2",
   "version": "0.2.11",
   "engines": [
     "node"
   ],
   "author": {
-    "name": "Benjamin Chelli",
-    "email": "benjamin@chelli.net",
-    "url": "https://github.com/bchelli"
+    "name": "Andreas Schierl",
+    "email": "github@schierla.de",
+    "url": "https://github.com/schierla"
   },
   "main": "lib/smb2.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchelli/node-smb2"
+    "url": "https://github.com/schierla/smb-browser-smb2"
   },
   "dependencies": {
     "ntlm": "^0.1.3"
